@@ -59,9 +59,38 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <img src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececded4a04d627de84c_portfolio%204%20-%20wide.svg" alt="" class="detail-header-image"/>
-        </div>
+        <main>
+            <div class="contenedor" id="contenedor1">
+                <textarea id="texto" placeholder="Escriba el texto aquí"></textarea>
+                
+                <div id="mensaje-enunciado">
+                    <img src="images/encriptador/warning.png" alt="Información" class="icono-info">
+                    <span>Solo se permiten minúsculas sin acento</span>
+                </div>
+                
+                <div class="btn-group1">
+                    <img src="images/encriptador/shield1.png" alt="Encriptar" class="btn" id="encriptar" title="Encriptar texto" onclick="encriptar()">
+                    <img src="images/encriptador/unlock.png" alt="Desencriptar" class="btn" id="desencriptar" title="Desencriptar texto" onclick="desencriptar()" disabled>
+                </div>
+        
+                <img src="images/encriptador/paste.png" alt="Pegar" class="btn" id="pegar" title="Pegar texto" onclick="pegar()">
+            </div>
+        
+            <div class="contenedor" id="contenedor2">
+                <img src="images/encriptador/noisy.png" alt="Imagen de Fondo" id="imagen-fondo">
+                <textarea id="parrafo" placeholder="Aquí se muestra el texto"></textarea>
+                
+                <div class="btn-group2">
+                    <img src="images/encriptador/paper.png" alt="Copiar" class="btn" id="copiar" title="Copiar texto" onclick="copiar()">
+                </div>
+            </div>
+            
+            <div id="alerta" style="display: none;">
+                <img id="alerta-icono" src="" alt="Icono de alerta">
+                <span id="alerta-mensaje"></span>
+            </div>
+        </main>
+        
         <div class="section">
             <div class="container">
                 <div class="w-layout-grid project-description-grid">

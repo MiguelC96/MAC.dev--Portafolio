@@ -976,195 +976,33 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     height: auto;
 }
 
-main {
+.webflow-link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  z-index: 2;
-  height: 100%; 
-}
-
-
-.container {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: flex-start; 
-  gap: 100px;
-  padding: 20px; 
-  position: relative; 
-  z-index: 3; 
-  text-align: center; 
-  
-}
-
-.contenedor {
-  width: 300px; 
-  height: 300px; 
-  background-color: rgba(242, 242, 242, 0.7803921568627451); 
-  opacity: 0.8; 
-  display: flex; 
-  flex-direction: row; 
-  justify-content: center; 
-  align-items: center; 
-  padding: 20px; 
-  box-sizing: border-box; 
-  display: inline-block; 
-  vertical-align: bottom; 
-  margin: 0px 20px; 
-  border: 10px solid #2cccc4; 
-  border-radius: 10px;
-  z-index: 3;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  margin-top: 150px;
-}
-
-textarea {
-  width: calc(100% - 20px); 
-  height: calc(100% - 20px);
-  resize: none; 
-  margin-bottom: 10px; 
-  padding: 10px; 
-  box-sizing: border-box; 
-  font-family: 'Roboto', sans-serif; 
-  border-radius: 10px;
-  font-size: x-large;
-  border: 1px solid #ddd; 
-  opacity: 1;
-}
-#contenedor2 {
-  width: 300px; 
-  height: 300px; 
-  background-color: rgba(242, 242, 242, 0.78); 
-  opacity: 0.8; 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 15px solid #2cccc4;
-  border-radius: 10px; 
-  z-index: 3;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  margin-top: 150px;
-  position: relative; 
-}
-#parrafo {
-  color: transparent;
-  background-color: transparent;
-  transition: color 0.3s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  z-index: 1;
-  font-size: x-large;
-}
-/* Mostrar el texto cuando el cursor está sobre el contenedor */
-#contenedor2:hover #imagen-fondo {
-  opacity: 0; 
-}
-
-#contenedor2:hover #parrafo {
-  color: #000; /* Hace visible el texto */
-}
-
-.btn {
-  width: 30px;
-  height: 30  px;
-  border: 2px solid #333; 
-  border-radius: 8px; 
-  background-color: #f0f0f0; 
-  color: #333; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease; 
-  z-index: 4;
-}
-
-.btn:hover {
-  background-color: #08d13a; /* Color de fondo al pasar el ratón */
-  transform: scale(1.05); /* Escala el botón ligeramente */
-}
-
-.btn-group1 {
-  display: flex;
-  justify-content: center;
-  top: -110px;
-  gap: 200px;
-  flex-direction: row;
-  align-items: start;
-  position: relative; 
-  left: -10px; 
-  margin-top: 39px; 
-  z-index: 4; 
-}
-
-.btn-group2 {
-  display: flex;
-  justify-content: center;
-  top: 175px;
-  flex-direction: row;
-  align-items: start;
-  position: relative; 
-  left: 110px;
-  margin-top: -120px; 
-  z-index: 4; 
-  }
-  
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  z-index: 4;
-  
-}
-
-#contenedor2:hover .btn {
-  z-index: 4;
-}
-
-.btn.disabled {
   opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none; 
+  -webkit-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-/* Estilo para botones deshabilitados */
-button.disabled {
-  background-color: #ced4da; 
-  cursor: not-allowed; 
-  opacity: 0.6; 
-}
-
-/* Estilo para botones habilitados */
-button:not(.disabled) {
-  background-color: #007bff; 
-  cursor: pointer; 
+.webflow-link:hover {
   opacity: 1;
 }
 
-/* Estilo para el botón "Pegar" */
-#pegar {
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  top: -120px;
-  gap: 140px;
-  flex-direction: row;
-  align-items: start;
-  position: relative; 
-  right: -290px; 
-  margin-top: -190px;
-  z-index: 4; /
+.webflow-link:active {
+  opacity: 0.8;
 }
 
-.icono-advertencia {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+.webflow-logo-tiny {
+  margin-top: -2px;
+  margin-right: 8px;
 }
 
    @media (max-width: 991px) {

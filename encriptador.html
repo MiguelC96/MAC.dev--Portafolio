@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Diseño Web</title>
-        <meta content="Project 1" property="og:title"/>
+        <title>Desarrollo</title>
+        <meta content="Desarrollo" property="og:title"/>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="dev" name="generator"/>
         <link href="styles.css" rel="stylesheet" type="text/css"/>
@@ -44,51 +44,83 @@
         <div class="section">
             <div class="container">
                 <div class="w-layout-grid project-overview-grid">
-                    <div id="w-node-f2c6de040bbf-63bf2d28">
-                        <h1 class="heading-jumbo">Diseño Web</h1>
-                        <div class="paragraph-light">Mockup y elementos graficos</div>
+                    <div id="w-node-f2c6de040bbf-6bddbf91">
+                        <h1 class="heading-jumbo">Desarrollo</h1>
+                        <div class="paragraph-light">Implementación y código</div>
                     </div>
-                    <div id="w-node-f2c6de040bc4-63bf2d28">
+                    <div id="w-node-f2c6de040bc4-6bddbf91">
                         <div class="position-name-text">Project Overview</div>
                         <div class="paragraph-light cc-position-name">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. </div>
                     </div>
-                    <div id="w-node-f2c6de040bc9-63bf2d28">
+                    <div id="w-node-f2c6de040bc9-6bddbf91">
                         <div class="position-name-text">My Contributions</div>
                         <div class="paragraph-light cc-position-name">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section">
-            <img src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececded4a04d627de84c_portfolio%204%20-%20wide.svg" alt="" class="detail-header-image"/>
-        </div>
+        <main>
+            <div class="contenedor" id="contenedor1">
+                <textarea id="texto" placeholder="Escriba el texto aquí"></textarea>
+                
+                <div id="mensaje-enunciado">
+                    <img src="images/encriptador/warning.png" alt="Información" class="icono-info">
+                    <span>Solo se permiten minúsculas sin acento</span>
+                </div>
+                
+                <div class="btn-group1">
+                    <img src="images/encriptador/shield1.png" alt="Encriptar" class="btn" id="encriptar" title="Encriptar texto" onclick="encriptar()">
+                    <img src="images/encriptador/unlock.png" alt="Desencriptar" class="btn" id="desencriptar" title="Desencriptar texto" onclick="desencriptar()" disabled>
+                </div>
+        
+                <img src="images/encriptador/paste.png" alt="Pegar" class="btn" id="pegar" title="Pegar texto" onclick="pegar()">
+            </div>
+        
+            <div class="contenedor" id="contenedor2">
+                <img src="images/encriptador/noisy.png" alt="Imagen de Fondo" id="imagen-fondo">
+                <textarea id="parrafo" placeholder="Aquí se muestra el texto"></textarea>
+                
+                <div class="btn-group2">
+                    <img src="images/encriptador/paper.png" alt="Copiar" class="btn" id="copiar" title="Copiar texto" onclick="copiar()">
+                </div>
+            </div>
+            
+            <div id="alerta" style="display: none;">
+                <img id="alerta-icono" src="" alt="Icono de alerta">
+                <span id="alerta-mensaje"></span>
+            </div>
+        </main>
+        
         <div class="section">
             <div class="container">
                 <div class="w-layout-grid project-description-grid">
-                    <div id="w-node-ee63d52fd223-63bf2d28">
-                        <div class="position-name-text">desarrollo</div>
-                        <div class="paragraph-light cc-position-name">Brand Designer</div>
-                        <div class="paragraph-tiny cc-paragraph-tiny-light">
-                            Apr 2014 - Mar 2015<br/>
-                        </div>
-                    </div>
-                    <div id="w-node-ee63d52fd22b-63bf2d28" class="paragraph-light">
+                    <div id="w-node-ee63d52fd22b-6bddbf91" class="paragraph-light">
                         Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. <br/>
                         ‍<br/>
                         Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. <br/>
                         ‍<br/>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. 
+                    </div>
+                    <div id="w-node-88a206fa61ae-6bddbf91" class="work-position-wrap">
+                        <div class="position-name-text">desarrollo</div>
+                        <div class="paragraph-light cc-position-name">Web Designer</div>
+                        <div class="paragraph-tiny cc-paragraph-tiny-light">
+                            Apr 2015 — Mar 2016<br/>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="section">
             <img src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececb102f96f5809144e_portfolio%202%20-%20wide.svg" width="920" alt="" class="detail-image"/>
+            <img src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececb102f913e509144f_portfolio%201%20-%20wide.svg" width="920" alt="" class="detail-image"/>
+            <img src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececded4a04d627de84c_portfolio%204%20-%20wide.svg" width="920" alt="" class="detail-image"/>
+        </div>
         <div class="section">
             <div class="container">
                 <div class="email-section">
                     <h3>¿Quieres ponerte en contacto?</h3>
                     <p>¿Te gusta lo que ves? ¡Contáctame y trabajemos juntos!</p>
-                    <a href="mailto:macd5896@gmail.com?subject=You&#x27;ve%20got%20mail!" class="email-link">macd5896@gmail.com</a>
+                    <a href="mailto:macd5896@gmail.com?subject=You&#x27;ve%20got%20mail!" class="email-link">miguel5896@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -104,6 +136,6 @@
             </div>
         </div>
         <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
     </body>
 </html>

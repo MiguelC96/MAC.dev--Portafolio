@@ -1005,6 +1005,80 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   margin-right: 8px;
 }
 
+.image-barrel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.barrel-image {
+  flex: 1 1 30%;
+  max-width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.code-container {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #000000 !important;
+  font-family: monospace;
+  overflow-x: auto;
+}
+pre {
+  margin: 0;
+  white-space: pre-wrap; /* Permite el ajuste del texto en el contenedor */
+}
+code {
+  display: flex;
+  color: #333;
+}
+.code-container {
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  overflow-x: auto;
+  
+}
+pre {
+  margin: 0;
+  white-space: pre-wrap; /* Permite el ajuste del texto en el contenedor */
+}
+code {
+  display: block;
+  color: #ffffff;
+}
+
+.github-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.github-info p {
+  margin: 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fdfdfd;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.github-link:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
    @media (max-width: 991px) {
      .styleguide-block {
        text-align: center;

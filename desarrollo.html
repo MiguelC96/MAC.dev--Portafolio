@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="dev" name="generator"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-sql.min.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" type="text/css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -150,28 +151,183 @@
             <div class="w-layout-grid project-overview-grid">
                 <div id="w-node-f2c6de040bc4-63bf2d28">
                     <div class="position-name-text">Base de datos</div>
-                    <div class="paragraph-light cc-position-name">Este proyecto consiste</div>
+                    <div class="paragraph-light cc-position-name">Este proyecto gestiona un sistema de inventario de repuestos automotrices. Incluye tablas para clientes, proveedores, stock, sucursales, ventas y compras, así como triggers para actualizar el stock automáticamente tras cada venta o compra.</div>
                 </div>
                 <div id="w-node-f2c6de040bc9-63bf2d28">
                     <div class="position-name-text">Mis contribuciones</div>
-                    <div class="paragraph-light cc-position-name"></div>
+                    <div class="paragraph-light cc-position-name">He desarrollado la base de datos de este proyecto, diseñando tablas, estableciendo relaciones clave entre ellas y creando triggers para automatizar la actualización del stock de repuestos según las compras y ventas registradas. Además, me encargué de optimizar la estructura de la base de datos para asegurar un manejo simple y preciso del inventario, mejorando así el flujo de información dentro del sistema de gestión.</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="code-container">
         <button class="copy-button" onclick="copyCode()">Copiar Código</button>
-        <pre><code id="code-block" class="language-javascript">
+        <pre><code id="code-block" class="language-sql">
+            create database gestion_respuestos;
 
+            --tabla clientes--
+            
+            CREATE TABLE Clientes (
+                ID INT PRIMARY KEY IDENTITY(1,1),
+                DNI INT,
+                CUIT VARCHAR(20),
+                [Nombre] VARCHAR(255),
+                Apellido VARCHAR(255),
+                FechaNacimiento DATE,
+                Sexo CHAR(1),
+                Direccion TEXT,
+                Telefono VARCHAR(20),
+                Mail VARCHAR(100),
+                Pais VARCHAR(100),
+                Region VARCHAR(100),
+                CuentaCorriente BIT
+            );
+            
+            --Definicion de condiciones NOT NULL en las columnas de tabla clientes.
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN DNI INT NOT NULL;
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN CUIT VARCHAR(20) NOT NULL;
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN [Nombre] VARCHAR(255) NOT NULL;
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN Apellido VARCHAR(255) NOT NULL;
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN FechaNacimiento DATE NOT NULL;
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN Telefono VARCHAR(20) NOT NULL;
+            
+            ALTER TABLE Clientes
+            ALTER COLUMN Mail VARCHAR(100) NOT NULL;
+            
+            
+            
+            -- Tabla Familia de Autopartes para establecer jerarquia entre piezas --
+            
+            CREATE TABLE FamiliasAutopartes (
+                FamiliaID INT PRIMARY KEY IDENTITY(1,1),
+                NombreFamilia VARCHAR(100) UNIQUE,
+                Descripcion VARCHAR(MAX),
+                FamiliaPadreID INT,
+                FOREIGN KEY (FamiliaPadreID) REFERENCES FamiliasAutopartes(FamiliaID)
+            );
+            
+            -- Tabla para el stock de ejemplo de TOYOTA--
+            
+            CREATE TABLE Stock_Toyota (
+                FamiliaID INT,
+                NumeroParteT VARCHAR(50) PRIMARY KEY,
+                NombreAutoparte VARCHAR(255),
+                Marca VARCHAR(100),
+                ModeloAuto VARCHAR(50),
+                Año INT,
+                Fabricante VARCHAR(100),
+                ProveedorID INT,
+                Cantidad INT,
+                Precio DECIMAL(10,2)
+            );
+            
+            ---Definicion de condiciones NOT NULL en las columnas de tabla Stock_Toyota
+            
+            ALTER TABLE Stock_Toyota
+            ALTER COLUMN NombreAutoparte VARCHAR(255) NOT NULL;
+            
+            ALTER TABLE Stock_Toyota
+            ALTER COLUMN Marca VARCHAR(100) NOT NULL;
+            
+            ALTER TABLE Stock_Toyota
+            ALTER COLUMN ModeloAuto VARCHAR(50) NOT NULL;
+            
+            ALTER TABLE Stock_Toyota
+            ALTER COLUMN ProveedorID INT NOT NULL;
+            
+            ALTER TABLE Stock_Toyota
+            ALTER COLUMN Cantidad INT NOT NULL;
+            
+            ALTER TABLE Stock_Toyota
+            ALTER COLUMN Precio DECIMAL(10,2) NOT NULL;
+            
+            
+            
+            --Tabla para el stock de ejemplo de HONDA--
+            
+            CREATE TABLE Stock_Honda (
+                FamiliaID INT,
+                NumeroParteH VARCHAR(50) PRIMARY KEY,
+                NombreAutoparte VARCHAR(255),
+                Marca VARCHAR(100),
+                ModeloAuto VARCHAR(50),
+                Año INT,
+                Fabricante VARCHAR(100),
+                ProveedorID INT,
+                Cantidad INT,
+                Precio DECIMAL(10,2)
+            );
+            
+            ---Definicion de condiciones NOT NULL en las columnas de tabla Stock_Honda
+            
+            ALTER TABLE Stock_Honda
+            ALTER COLUMN NombreAutoparte VARCHAR(255) NOT NULL;
+            
+            ALTER TABLE Stock_Honda
+            ALTER COLUMN Marca VARCHAR(100) NOT NULL;
+            
+            ALTER TABLE Stock_Honda
+            ALTER COLUMN ModeloAuto VARCHAR(50) NOT NULL;
+            
+            ALTER TABLE Stock_Honda
+            ALTER COLUMN ProveedorID INT NOT NULL;
+            
+            ALTER TABLE Stock_Honda
+            ALTER COLUMN Cantidad INT NOT NULL;
+            
+            ALTER TABLE Stock_Honda
+            ALTER COLUMN Precio DECIMAL(10,2) NOT NULL;
+            
+            
+            --Tabla Proveedores--
+            
+            CREATE TABLE Proveedores (
+                ID INT PRIMARY KEY,
+                Nombre VARCHAR(255),
+                CUIT VARCHAR(20),
+                Mail VARCHAR(100),
+                Telefono VARCHAR(20),
+                Pais VARCHAR(100),
+                Provincia VARCHAR(100),
+                PaginaWeb VARCHAR(255)
+            );
+            
+            --Definicion de condiciones NOT NULL en las columnas de tabla Proveedores.
+            
+            ALTER TABLE Proveedores
+            ALTER COLUMN Nombre VARCHAR(255) NOT NULL;
+            
+            ALTER TABLE Proveedores
+            ALTER COLUMN CUIT VARCHAR(20) NOT NULL;
+            
+            ALTER TABLE Proveedores
+            ALTER COLUMN Mail VARCHAR(100) NOT NULL;
+            
+            ALTER TABLE Proveedores
+            ALTER COLUMN Telefono VARCHAR(20) NOT NULL;
+            
+            
         </code></pre>
     </div>
         <div class="section">
-            <img src="images/" width="920" alt="" class="detail-image"/>
+            <img src="images/ER_GestionRepuestos.png" width="920" alt="" class="detail-image"/>
         </div>
     </div>
         <div class="github-info">
             <h4><strong>¿Quieres ver el código completo?</strong></h4>
-            <a href="https://github.com/MiguelC96/EncriptadorTexto" target="_blank" class="github-link">Ver en GitHub</a>
+            <a href="https://github.com/MiguelC96/Gestion_Repuestos_SQLServer_DB/blob/main/SQLQuery_GestionRepuestos.sql" target="_blank" class="github-link">Ver en GitHub</a>
         </div>
     </div>
     <div class="section">
@@ -195,6 +351,7 @@
     </div>
     <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-sql.min.js"></script>
     <script src="main.js"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>

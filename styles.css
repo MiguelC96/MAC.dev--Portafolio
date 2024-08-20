@@ -1081,6 +1081,7 @@ code {
   background-color: #ffffff;
   color: #000000;
 }
+
    @media (min-width: 991px) {
     .text-field.cc-textarea {
       text-align: left;

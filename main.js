@@ -1,8 +1,3 @@
-document.querySelector('.menu-button').addEventListener('click', function() {
-    const navMenu = document.querySelector('.navigation-items');
-    navMenu.classList.toggle('open');
-});
-
 function copyCode() {
     // Seleccionar el contenido del código
     const codeBlock = document.getElementById('code-block');

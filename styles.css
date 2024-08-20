@@ -1081,6 +1081,31 @@ code {
   background-color: #ffffff;
   color: #000000;
 }
+   @media (min-width: 991px) {
+    .text-field.cc-textarea {
+      text-align: left;
+    }
+    .contact {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    .contact-form {
+      width: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    .contact-form-wrap {
+      text-align: left;
+      width: 100%;
+      }
+    }
    @media (max-width: 991px) {
      .styleguide-block {
        text-align: center;

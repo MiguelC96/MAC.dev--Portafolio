@@ -1035,14 +1035,6 @@ code {
   display: flex;
   color: #333;
 }
-.code-container {
-  margin: 20px 0;
-  padding: 10px;
-  border-radius: 4px;
-  font-family: monospace;
-  overflow-x: auto;
-  
-}
 pre {
   margin: 0;
   white-space: pre-wrap; /* Permite el ajuste del texto en el contenedor */
@@ -1050,6 +1042,16 @@ pre {
 code {
   display: block;
   color: #ffffff;
+}
+.copy-button {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .github-info {
@@ -1271,6 +1273,17 @@ code {
        font-size: 36px;
        line-height: 54px;
      }
+     .code-container{
+      width: 90%;
+      font-size: 12px;
+      display: flexbox;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+     }
+     .copy-button {
+      padding: 10px;
+     }
    }
    
    @media (max-width: 767px) {
@@ -1436,6 +1449,18 @@ code {
      ._404-wrap {
        padding: 30px;
      }
+     .code-container{
+      width: 90%;
+      font-size: 12px;
+      display: flexbox;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+     }
+     .copy-button {
+      padding: 5px;
+      font-size: 12px;
+     }
    }
    
    @media (max-width: 479px) {
@@ -1463,7 +1488,7 @@ code {
        -ms-flex: 0 0 auto;
        flex: 0 0 auto;
      }
-@     .contact {
+    .contact {
        padding-right: 15px;
        padding-left: 15px;
      }
@@ -1534,6 +1559,18 @@ code {
      .email-link {
        font-size: 30px;
        line-height: 46px;
+     }
+     .code-container{
+      width: 90%;
+      font-size: 10px;
+      display: -ms-flexbox  ;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+     }
+     .copy-button {
+      padding: 2px;
+      font-size: 10px;
      }
    }
    
